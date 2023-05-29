@@ -1,0 +1,565 @@
+@font-face {
+	font-family: 'MoscowSans';
+	src: /*url('/fonts/MoscowSans/MoscowSans-Bold.woff2') format('woff2'), 
+		 url('/fonts/MoscowSans/MoscowSans-Extrabold.woff2') format('woff2')
+		url('/fonts/MoscowSans/MoscowSans-Light.woff2') format('woff2'), */
+		url('/fonts/MoscowSans/MoscowSans-Regular.woff2') format('woff2');  
+}
+
+*{
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+:root {
+    --navbar-text-color: white;
+    --navbar-bg-color: #0099ff;
+    --navbar-bg-image: url(img/svg/navbar-bg.svg);
+
+
+    --danger-color-hover: red; 
+    --submit-btn-color: #A2E722;
+    --primary-color: #0099ff;
+    --items-bg-color: #f3f3f3;
+}
+
+body {
+    font-family: 'MoscowSans', sans-serif;
+    font-size: 18px;
+    margin: auto;
+    background-color: white;
+}
+
+.navbar {
+    background-color: var(--navbar-bg-color);
+    background-image: var(--navbar-bg-image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 160px;
+    margin-bottom: 10px;
+}
+
+.navbar-text {
+    align-items:center;
+    text-align: center;
+    color: var(--navbar-text-color);
+    user-select: none;
+    margin: auto;
+}
+
+.navbar-text.title {
+    font-weight: 600;
+    font-size: 55px;
+    padding-top: 25px;
+    width: fit-content;
+    cursor: pointer;
+}
+
+.navbar-text.title::after {
+    content: "";
+    width: 0px;
+    padding: 0;
+    margin: 0px auto 7px auto;
+    display: block;
+    height: 2px;
+    background-color: white;
+    transition: width 0.4s, box-shadow 0.2s;
+}
+
+.navbar-text.title:hover::after {
+    width: 440px;
+    box-shadow: 0px 0px 10px white, 0px 0px 3px var(--navbar-bg-color);;
+}
+
+.navbar-text.main {
+    font-size: 30px;
+    opacity: 0.95;
+    width: fit-content;
+}
+
+.user-authorization-icon{
+    float: right;
+    margin-top: 55px;
+    margin-right: 35px;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+    cursor: pointer;
+}
+
+.user-authorization-icon:hover{
+    opacity: 1;
+}
+
+.user-authorization-icon a{
+    width: 45px;
+    height: 45px;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.navbar-logo{
+    float: left;
+}
+
+.navbar-logo img{
+    width: 110px;
+    height: 100px;
+    margin-top: 30px;
+    margin-left: 30px;
+}
+
+.container {
+    min-height: calc(100% - 280px);
+    height: auto;
+}
+
+.about-us {
+    height: 120px;
+    background-color: var(--navbar-bg-color);;
+}
+
+.about-us-text{
+    color: var(--navbar-text-color);
+    margin: auto;
+    width: fit-content;
+    padding-top: 5px;
+    font-weight: 500;
+}
+
+.about-us-text.title{
+    font-size: 30px;
+}
+
+.about-us-text.description{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.social-info {
+    width: 70px;
+    height: 30px;
+    margin: auto;
+}
+
+.social-info-item svg{
+    width: 30px;
+    height: 30px;
+    margin: auto;
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+
+.social-info-item svg:hover {
+    opacity: 1;
+}
+
+.social-info-item.vk {
+    float: left;
+}
+
+.social-info-item.tg {
+    float: right;
+}
+
+
+/* Ниже идут стили для окна с выбором судна */
+
+.yachts-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.yachts-item{
+    margin: 20px;
+    width: 400px;
+    height: 350px;
+    background-color: var(--items-bg-color);
+    border-radius: 10px 10px;
+    cursor: pointer;
+}
+
+.yachts-item a{
+    color: black;
+    text-decoration: none;
+}
+
+.yachts-item:hover .yachts-info.title{
+    font-size:30px;
+    color:#4db8ff
+}
+
+.yachts-photo-title img{
+    width: 400px;
+    height: 230px;
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 5px;
+}
+
+.yachts-info {
+    color: black;
+    text-align: center;
+}
+
+.yachts-info.title {
+    font-size: 22px;
+    height: fit-content;
+    width: fit-content;
+    margin: auto;
+    transition: font-size 0.2s, color 0.2s;
+}
+
+.yachts-info.text {
+    margin-top: 5px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Ниже стили для просмотра и аренды судна */
+
+.boat-info {
+    margin: 20px auto;
+    height: auto;
+    display: flex;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #4db8ff;
+    box-shadow: 0px 0px 1px var(--navbar-bg-color);
+    width: 1150px;
+}
+
+.boat-title-photo img{
+    width: 567px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.boat_description {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 50px 10px 50px;
+    width: 100%;
+    height: fit-content;
+}
+
+.boat_meta{
+    border-bottom: 1px rgb(163, 163, 163) solid;
+    width: 100%;
+    height: fit-content;
+    padding: 5px 10px 0px 10px;
+    display: flex;
+    font-size: 26px;
+    color: black;
+    justify-content: space-between;
+}
+
+.boat_meta-name {
+    user-select: all;
+}
+
+.boat_table {
+    width: 100%;
+    height: 100%;
+    padding: 20px 10px 0px 10px;
+}
+
+.boat_table-line {
+    padding: 0px 3px;
+    margin-bottom: 10px;
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    line-height: 25px;
+}
+
+.boat_table-line:nth-child(odd) {
+    background-color: #f3f3f3;
+}
+
+.rent_menu {
+    width: inherit;
+    margin-left: 10px;
+    height: 30px;
+    margin-top: 10px;
+}
+
+form[action="smth.php"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.rent_menu form input{
+    width: 32%;
+    outline-width: 0;
+    border-width: 1px;
+}
+
+
+@media (max-width: 1170px) {
+	.boat-info {
+        width: 900px;
+    }
+
+    .boat_description{
+        margin: 10px;
+    }
+
+    .boat_meta{
+        font-size: 20px;
+    }
+
+    .boat_table-line{
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .boat-title-photo img {
+        width: 438px;
+    }
+}
+
+.umodal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.75);
+	z-index: 1010;
+}
+
+.umodal .umodal-frame {
+	max-width: 750px;
+	margin: 50px auto;
+}
+.umodal.mini .umodal-frame {
+	max-width: 400px;
+}
+
+.umodal .header {
+    padding: 15px;
+    background-color: white;
+    font-size: 22px;
+    border-radius: 6px 6px 0 0;
+    border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+}
+
+.umodal .body {
+    padding: 15px;
+    background-color: white;
+    /* border-radius: 0 0 6px 6px; */
+    border-bottom: 1px rgba(0, 0, 0, 0.1) solid;
+}
+
+.umodal .footer {
+    padding: 15px;
+    background-color: white;
+    border-radius: 0 0 6px 6px;
+}
+
+.umodal .header .uclose {
+	cursor: pointer;
+	float: right;
+	margin: -14px;
+	width: 47px;
+	text-align: center;
+	font-size: 30px;
+}
+
+.umodal .header .uclose i {
+	color: red;
+	line-height: 47px;
+}
+
+.umodal .body form {
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    margin-block-end: 0;
+}
+
+input {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-family: 'MoscowSans', sans-serif;
+    height: 30px;
+    margin: 7px 0;
+    font-size: 18px;
+    padding-left: 6px;
+    border-radius: 5px;
+}
+
+input:focus {
+    outline: 1px var(--navbar-bg-color) solid;
+}
+
+input[type="submit"] {
+    background-color: var(--submit-btn-color);
+    width: auto;
+    height: 30px;
+    margin-left: auto;
+    float: right;
+    min-width: 150px;
+    padding: 0 16px;
+    cursor: pointer;
+}
+
+
+input[type="button"] {
+    background-color: var(--submit-btn-color);
+    width: 150px;
+    height: 30px;
+    float: left;
+}
+
+/* .umodal .header .uclose:hover {
+	background-color: var(--danger-color-hover);
+} */
+
+.navbar.admin {
+    height: 80px;
+
+}
+
+.container.admin {
+    min-height: calc(100% - 200px);
+    height: auto;
+}
+
+.navbar-admin-text{
+    line-height: 80px;
+    color: white;
+    width: fit-content;
+    margin: 0 20px 0 20px;
+    font-size: 30px;
+    transition: font-size 0.3s;
+    user-select: none;
+}
+
+.navbar-admin-text.title {
+    float: left;
+}
+
+.buttons a{
+    line-height: 30px;
+    margin: 7px 0;
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    height: 80px;
+    line-height: 80px;
+    color: white;
+    flex-direction: row;
+    width: auto;
+    font-size: 20px;
+    transition: font-size 0.3s;
+    user-select: none;
+}                
+
+.nav-link {
+    flex-grow: 1;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.nav-link.active {
+    background-color: rgba(158, 218, 47, 0.9);
+}
+
+.nav-link.active:hover{
+    background-color: rgba(158, 218, 47, 0.9);
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s;
+}
+
+
+@media (max-width: 1000px){
+    .navbar-admin-text.title{
+        font-size: 24px;
+        transition: font-size 0.3s;
+    }
+
+    .nav-links{
+        font-size: 18px;
+        transition: font-size 0.3s;
+    }
+}
+
+.boats-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.boats-list-item {
+    background-color: var(--items-bg-color);
+    border-radius: 10px 10px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    margin: 20px;
+    min-width: 375px;
+    transition: box-shadow 0.2s;
+}
+
+.boats-list-item:hover {
+    box-shadow: 0 0 5px 2px #0099ff96;
+    transition: box-shadow 0.2s;
+}
+
+/* .boats-list-item.add:hover{
+    box-shadow: none;
+} */
+
+
+.boats-list-item-img img{
+    width: 375px;
+    border-radius: 10px 10px 0 0;
+}
+
+.boats-list-item-text {
+    color: black;
+    text-align: center;
+}
+
+.boats-list-item-text.title{
+    font-size: 24px;
+    padding-top: 5px;
+}
+
+.boats-list-item.add img{
+    width: 375px;
+    display:block;
+    margin:auto;
+}
+
+.boats-list-item.add {
+    border: 1px solid #88888834;
+}
+
+.input-info {
+    margin-bottom: 15px;
+}
+
+.input-info input {
+    display: block;
+    margin: 2px 0;
+    width: 100%;
+}
+
+input[type="file"] {
+    border-radius: 5px;
+}
